@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyectos — Raúl Martín</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="layout">
+
+    <!-- Barra lateral -->
+    <aside class="sidebar">
+      <img class="sidebar__photo" src="assets/foto.png" alt="Foto de Raúl Martín" />
+      <p class="sidebar__name">Raúl Martín</p>
+      <p class="sidebar__role">Técnico en Sistemas<br />Microinformáticos y Redes</p>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <label for="nav-toggle" class="nav-toggle-btn" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </label>
+
+      <ul class="nav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="experiencia.html">Experiencia</a></li>
+        <li><a href="educacion.html">Educación</a></li>
+        <li><a href="habilidades.html">Habilidades</a></li>
+        <li><a href="proyectos.html" class="is-active">Proyectos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+
+      <div class="sidebar__social">
+        <a href="https://www.instagram.com/_raaulmartin" target="_blank" rel="noopener" class="social-link">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8" />
+            <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8" />
+            <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" />
+          </svg>
+          <span>_raaulmartin</span>
+        </a>
+        <a href="https://github.com/RaulMartinVilellass" target="_blank" rel="noopener" class="social-link">
+          <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+          </svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+
+      <div class="sidebar__contact">
+        <a href="mailto:mv.raul06@gmail.com">mv.raul06@gmail.com</a>
+        <a href="tel:+34672683395">+34 672 683 395</a>
+        <span>Raul Martin Vilellas · LinkedIn</span>
+      </div>
+    </aside>
+
+    <!-- Contenido: proyectos -->
+    <main class="content">
+      <header class="page-header">
+        <h1>Proyectos</h1>
+        <p class="lead">Cosas que he construido, dentro y fuera de clase.</p>
+      </header>
+
+      <!-- Filtro por estado: 3 botones (radios ocultos + etiquetas estilizadas), sin JavaScript -->
+      <fieldset class="projects-filter">
+        <legend>Filtrar por estado</legend>
+
+        <input type="radio" name="proj-filter" id="filter-done" class="filter-radio">
+        <label for="filter-done" class="filter-btn">Finalizado</label>
+
+        <input type="radio" name="proj-filter" id="filter-progress" class="filter-radio">
+        <label for="filter-progress" class="filter-btn">En curso</label>
+
+        <input type="radio" name="proj-filter" id="filter-soon" class="filter-radio">
+        <label for="filter-soon" class="filter-btn">Próximamente</label>
+
+        <div class="projects-grid">
+
+          <!-- Tarjeta de proyecto 1 -->
+          <div class="project-card status-progress">
+            <h3>Mural de fotos de boda</h3>
+            <details class="project-more">
+              <summary>
+                <span class="label-more">Ver más</span>
+                <span class="label-less">Ver menos</span>
+              </summary>
+              <p>
+                Hice una página web para mi tía donde los invitados de su boda suben fotos y
+                vídeos en directo, para que tenga un mural donde puedan ver todas las fotos que
+                hacen en su boda. Alojada en GitHub Pages, con Supabase para el almacenamiento de
+                las fotos.
+              </p>
+            </details>
+            <a class="project-link" href="https://github.com/RaulMartinVilellass/Mural" target="_blank" rel="noopener">Ver proyecto ↗</a>
+            <span class="project-status project-status--progress">En curso</span>
+          </div>
+
+          <!-- Tarjeta de proyecto 2 -->
+          <div class="project-card status-done">
+            <h3>Proyecto Tres en raya</h3>
+            <details class="project-more">
+              <summary>
+                <span class="label-more">Ver más</span>
+                <span class="label-less">Ver menos</span>
+              </summary>
+              <p>
+                Tuvimos que hacer un proyecto en primero del grado superior DAM, donde teníamos
+                que hacer una aplicación de Java conectada a una base de datos y una página web
+                sobre esa aplicación. Decidimos hacer 3 juegos: piedra, papel o tijera; 3 en raya;
+                y piedra, papel, tijera, lagarto o spock, sacado de la serie Big Bang Theory. Yo
+                sobre todo me dediqué a la página web y la base de datos.
+              </p>
+            </details>
+            <a class="project-link" href="https://raulmartinvilellass.github.io/ProyectoDAM/" target="_blank" rel="noopener">Ver Web ↗</a>
+            <a class="project-link" href="https://github.com/RaulMartinVilellass/ProyectoDAM" target="_blank" rel="noopener">Ver Proyecto ↗</a>
+            <span class="project-status project-status--done">Finalizado</span>
+          </div>
+
+          <!-- Tarjeta de proyecto 3 -->
+          <div class="project-card status-progress">
+            <h3>Portfolio</h3>
+            <p>
+              He diseñado esta página web con HTML y CSS, y consiste en mi propio portfolio. Está
+              alojada en mi GitHub, donde tengo mis proyectos con todos los archivos.
+            </p>
+            <span class="project-status project-status--progress">En curso</span>
+          </div>
+
+        </div>
+      </fieldset>
+    </main>
+
+  </div>
+</body>
+</html>
