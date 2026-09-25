@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="project-card">
           <h3>Mural de fotos de boda</h3>
           <p>
@@ -25,3 +26,6 @@
           <p>He diseñado esta pagina web con html y css donde consiste en mi portfolio. Esta alojada en mi github donde tengo mis proyectos con todos los archivos. </p>
           <span class="project-status project-status--progress">En curso</span>
         </div>
+=======
+# Portfolio
+>>>>>>> 1d5655907563da07153e4eba583bca44376450cd
