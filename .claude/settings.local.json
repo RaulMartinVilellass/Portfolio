@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start \"\" \"c:\\\\Users\\\\USUARIO\\\\Downloads\\\\portfolio-raul-martin\\\\index.html\")"
+    ]
+  }
+}
