@@ -14,8 +14,32 @@
   --accent: #3f7d63;
   --accent-soft: #cfe0d7;
   --line: #dedbd1;
+  --card-bg: #fff;
+  --status-done-text: #1f4a3a;
+  --status-progress-bg: #f0e6cf;
+  --status-progress-text: #7a5c14;
+  --status-soon-bg: #dde3ea;
+  --status-soon-text: #40495a;
   --font-head: "Space Grotesk", "Segoe UI", sans-serif;
   --font-body: "Inter", "Segoe UI", sans-serif;
+}
+
+[data-theme="dark"] {
+  --bg: #151917;
+  --panel: #0e1211;
+  --panel-text: #ece9e1;
+  --panel-muted: #8b9089;
+  --ink: #e8e6e0;
+  --muted: #9a9d97;
+  --accent: #5fa988;
+  --accent-soft: #24352c;
+  --line: #2b3330;
+  --card-bg: #1c2220;
+  --status-done-text: #bfe8d4;
+  --status-progress-bg: #3a3320;
+  --status-progress-text: #e3c979;
+  --status-soon-bg: #262f38;
+  --status-soon-text: #a9b7c6;
 }
 
 * {
@@ -33,6 +57,7 @@ body {
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 h1, h2, h3 {
@@ -112,6 +137,44 @@ button:focus-visible {
   font-size: 0.86rem;
   color: var(--panel-muted);
   margin: 0 0 1.3rem 0;
+}
+
+/* ===== Botón de modo oscuro/claro ===== */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.9rem 0;
+  padding: 0.35rem 0.6rem;
+  background: transparent;
+  color: var(--panel-muted);
+  border: 1px solid var(--panel-muted);
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--panel-text);
+  border-color: var(--panel-text);
+}
+
+.theme-toggle__icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .theme-toggle .theme-toggle__icon--moon,
+.theme-toggle .theme-toggle__icon--sun {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle .theme-toggle__icon--sun,
+.theme-toggle .theme-toggle__icon--moon {
+  display: block;
 }
 
 /* ===== Botón de menú (3 rayas), solo se ve en responsive ===== */
@@ -500,7 +563,7 @@ button:focus-visible {
 
 .filter-radio:checked + .filter-btn {
   background: var(--ink);
-  color: #fff;
+  color: var(--bg);
   border-color: var(--ink);
 }
 
@@ -537,7 +600,7 @@ button:focus-visible {
   padding: 1.4rem;
   display: flex;
   flex-direction: column;
-  background: #fff;
+  background: var(--card-bg);
 }
 
 .project-card h3 {
@@ -616,17 +679,17 @@ button:focus-visible {
 
 .project-status--done {
   background: var(--accent-soft);
-  color: #1f4a3a;
+  color: var(--status-done-text);
 }
 
 .project-status--progress {
-  background: #f0e6cf;
-  color: #7a5c14;
+  background: var(--status-progress-bg);
+  color: var(--status-progress-text);
 }
 
 .project-status--soon {
-  background: #dde3ea;
-  color: #40495a;
+  background: var(--status-soon-bg);
+  color: var(--status-soon-text);
 }
 
 /* ===== Contacto ===== */
@@ -723,6 +786,18 @@ button:focus-visible {
   }
 
   .sidebar__social .social-link span {
+    display: none;
+  }
+
+  /* Botón de tema: en responsive solo se ve el icono */
+  .theme-toggle {
+    order: 1;
+    margin: 0 1.2rem;
+    padding: 0.5rem;
+    gap: 0;
+  }
+
+  .theme-toggle span {
     display: none;
   }
 

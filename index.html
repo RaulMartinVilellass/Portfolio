@@ -7,6 +7,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    (function () {
+      var saved = localStorage.getItem("theme");
+      if (saved === "dark") document.documentElement.setAttribute("data-theme", "dark");
+    })();
+  </script>
 </head>
 <body>
   <div class="layout">
@@ -16,6 +22,17 @@
       <img class="sidebar__photo" src="assets/foto.png" alt="Foto de Raúl Martín" />
       <p class="sidebar__name">Raúl Martín</p>
       <p class="sidebar__role">Técnico en Sistemas<br />Microinformáticos y Redes</p>
+
+      <button type="button" class="theme-toggle" aria-label="Cambiar entre modo claro y oscuro" aria-pressed="false">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2" />
+          <path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7" stroke-linecap="round" />
+        </svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z" stroke-linejoin="round" />
+        </svg>
+        <span>Modo oscuro</span>
+      </button>
 
       <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
       <label for="nav-toggle" class="nav-toggle-btn" aria-label="Abrir menú">
@@ -62,7 +79,7 @@
       <p class="hero__lead">
         Estudiante de 2º curso de Desarrollo de Aplicaciones Multiplataforma,
         con base en informática y redes. He trabajado en un equipo pequeño de
-        desarrollo web durante mis prácticas, y me gusta aprender, mejorar y
+        desarrollo web durante mis prácticas, me gusta aprender, mejorar y
         aportar valor en cada proyecto en el que participo.
       </p>
 
